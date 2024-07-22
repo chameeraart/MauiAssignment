@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:MauiAssignment.Models"
+             x:Class="MauiAssignment.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:StemData />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Title -->
+            <Label Text="HPR Data Management"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <!-- Hidden Entry Fields -->
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10"
+                   IsVisible="False">
+                <Entry x:Name="txtMachineKeyValue"
+                       Placeholder="Enter Stem Number"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       IsVisible="False" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10"
+                   IsVisible="False">
+                <Entry x:Name="txtStemKeyValue"
+                       Placeholder="Enter Stem Number"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       IsVisible="False" />
+            </Frame>
+
+            <!-- Visible Entry Fields -->
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtStemNumber"
+                       Placeholder="Enter Stem Number"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtreceiverPosition"
+                       Placeholder="Enter Stem Receiver Position"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtcoordinateReferenceSystem"
+                       Placeholder="Enter Stem Coordinate Reference System"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtLongitude"
+                       Placeholder="Enter Stem Longitude"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtLatitude"
+                       Placeholder="Enter Stem Latitude"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <Frame HasShadow="True"
+                   CornerRadius="10"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Entry x:Name="txtAltitude"
+                       Placeholder="Enter Stem Altitude"
+                       BackgroundColor="White"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       PlaceholderColor="Gray" />
+            </Frame>
+
+            <!-- Buttons -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Button Text="Add"
+                        BackgroundColor="#3A990F"
+                        TextColor="White"
+                        CornerRadius="5"
+                        WidthRequest="80"
+                        Clicked="OnAddClicked"/>
+
+                <Button Text="Update"
+                        BackgroundColor="#FFC107"
+                        TextColor="White"
+                        CornerRadius="5"
+                        WidthRequest="80"
+                        Clicked="OnUpdateClicked" />
+
+                <Button Text="Delete"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        CornerRadius="5"
+                        WidthRequest="80"
+                        Clicked="OnDeleteClicked" />
+
+                <Button Text="Clear"
+                        BackgroundColor="#1323DE"
+                        TextColor="White"
+                        CornerRadius="5"
+                        WidthRequest="80"
+                        Clicked="OnClearClicked" />
+            </StackLayout>
+
+            <!-- Status Label -->
+            <Label x:Name="StatusLabel"
+                   FontSize="16"
+                   TextColor="#666"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0" />
+
+            <!-- DataGrid -->
+            <syncfusion:SfDataGrid x:Name="dataGrid"
+                                   Margin="0,20,0,0"
+                                   BackgroundColor="White"
+                                   GridLinesVisibility="Both"
+                                   RowHeight="40"
+                                   ColumnWidthMode="Fill"
+                                   SelectionMode="Single"
+                                   SelectionChanged="dataGrid_SelectionChanged">
+            </syncfusion:SfDataGrid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
